@@ -6,9 +6,9 @@ import 'package:catcher/core/application_profile_manager.dart';
 import 'package:catcher/handlers/report_handler.dart';
 import 'package:catcher/mode/dialog_report_mode.dart';
 import 'package:catcher/mode/page_report_mode.dart';
+import 'package:catcher/mode/report_mode_action_confirmed.dart';
 import 'package:catcher/model/application_profile.dart';
 import 'package:catcher/model/catcher_options.dart';
-import 'package:catcher/mode/report_mode_action_confirmed.dart';
 import 'package:catcher/model/localization_options.dart';
 import 'package:catcher/model/report.dart';
 import 'package:catcher/model/report_mode.dart';
@@ -53,7 +53,7 @@ class Catcher with ReportModeAction {
     _configureLogger();
     _setupCurrentConfig();
     _setupErrorHooks();
-    _setupLocalization();
+    setupLocalization();
     _setupReportMode();
     _loadDeviceInfo();
     _loadApplicationInfo();
@@ -209,7 +209,7 @@ class Catcher with ReportModeAction {
     });
   }
 
-  _setupLocalization() {
+  setupLocalization() {
     Locale locale = Locale("en", "US");
     if (_isContextValid()) {
       BuildContext context = _getContext();
