@@ -53,7 +53,7 @@ class Catcher with ReportModeAction {
     _configureLogger();
     _setupCurrentConfig();
     _setupErrorHooks();
-    setupLocalization();
+    _setupLocalization();
     _setupReportMode();
     _loadDeviceInfo();
     _loadApplicationInfo();
@@ -209,7 +209,7 @@ class Catcher with ReportModeAction {
     });
   }
 
-  setupLocalization() {
+  _setupLocalization() {
     Locale locale = Locale("en", "US");
     if (_isContextValid()) {
       BuildContext context = _getContext();
