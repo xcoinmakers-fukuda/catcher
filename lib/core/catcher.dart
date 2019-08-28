@@ -53,6 +53,7 @@ class Catcher with ReportModeAction {
     _configureLogger();
     _setupCurrentConfig();
     _setupErrorHooks();
+    setupLocalization(null);
     _setupReportMode();
     _loadDeviceInfo();
     _loadApplicationInfo();
