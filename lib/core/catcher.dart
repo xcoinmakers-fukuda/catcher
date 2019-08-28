@@ -53,7 +53,6 @@ class Catcher with ReportModeAction {
     _configureLogger();
     _setupCurrentConfig();
     _setupErrorHooks();
-    _setupLocalization();
     _setupReportMode();
     _loadDeviceInfo();
     _loadApplicationInfo();
@@ -209,27 +208,23 @@ class Catcher with ReportModeAction {
     });
   }
 
-  _setupLocalization() {
-    Locale locale = Locale("en", "US");
-    if (_isContextValid()) {
-      BuildContext context = _getContext();
-      if (context != null) {
-        locale = Localizations.localeOf(context);
-      }
+  setupLocalization(Locale newLocale) {
+    if (newLocale == null) {
+      newLocale = Locale("en", "US");
+    }
 
-      if (_currentConfig.localizationOptions != null) {
-        for (var options in _currentConfig.localizationOptions) {
-          if (options.languageCode.toLowerCase() ==
-              locale.languageCode.toLowerCase()) {
-            _localizationOptions = options;
-          }
+    if (_currentConfig.localizationOptions != null) {
+      for (var options in _currentConfig.localizationOptions) {
+        if (options.languageCode.toLowerCase() ==
+            newLocale.languageCode.toLowerCase()) {
+          _localizationOptions = options;
         }
       }
     }
 
     if (_localizationOptions == null) {
       _localizationOptions =
-          _getDefaultLocalizationOptionsForLanguage(locale.languageCode);
+          _getDefaultLocalizationOptionsForLanguage(newLocale.languageCode);
     }
   }
 
