@@ -18,10 +18,11 @@ class LocalizationOptions {
     this.notificationReportModeTitle = "Application error occurred",
     this.notificationReportModeContent =
         "Click here to send error report to support team.",
-    this.dialogReportModeTitle = "エラーが発生しました。",
-    this.dialogReportModeDescription = "エラー内容をサポートチームへ報告しますか？",
-    this.dialogReportModeAccept = "報告する",
-    this.dialogReportModeCancel = "無視する",
+    this.dialogReportModeTitle = "Crash。",
+    this.dialogReportModeDescription =
+        "Unexpected error occurred in application. Error report is ready to send to support team. Please click Accept to send error report or Cancel to dismiss report.",
+    this.dialogReportModeAccept = "Accept",
+    this.dialogReportModeCancel = "Cancel",
     this.pageReportModeTitle = "Crash",
     this.pageReportModeDescription =
         "Unexpected error occurred in application. Error report is ready to send to support team. Please click Accept to send error report or Cancel to dismiss report.",
